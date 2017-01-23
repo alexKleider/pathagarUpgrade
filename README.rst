@@ -29,12 +29,23 @@ and
 ``venv``: an environment created from ``p2/require.txt``, which was
 simply a copy of ``pathagar/requirements.pip`` with all the '=='
 changed to '>='.  I believe (but am not absolutely certain) the
-command used was ``pip install --upgrade -r require.txt``.
+command used was ``pip install --upgrade -r require.txt``.[1]_
+
+.. [1] The ``require.txt`` file contains subsequent additions as more
+   dependencies needed by ``Django v1.10`` are discovered.
 
 Then it was simply a matter of creating a ``Django`` project: ``p2``
 which set up the directory structure found there.
 My work so far has been to edit the ``p2/p2/settings.py`` file to
 include all the content of ``pathagar/settings.py`` in a form that is
 acceptable to the latest version of ``Django``.
+
+The following 'sanity check' is recommended when beginning work::
+
+    (venv)alex@X301n3:/Pj/pathagar$ python -V
+    Python 2.7.6
+    (venv)alex@X301n3:/Pj/pathagar$ python -c "import django; print(django.get_version())"
+    1.10.5
+
 
 That's as far as I've gotten so far.

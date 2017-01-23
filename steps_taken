@@ -1,0 +1,10 @@
+# File: steps_taken  (a .git/info/exclude file)
+
+Here I record what's been done to serve as an aid in composing commit
+messages.
+
+./manage.py startapp books
+pip install django-uuidfield
+./manage.py migrate
+# add books to p2/settings.py INSTALLED_APPS
+./manage.py makemigrations books  # => trace back found in to_solve.

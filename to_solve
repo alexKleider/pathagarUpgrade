@@ -1,0 +1,52 @@
+(venv)alex@X301n3:/Pj/p2$ ./manage.py makemigrations books
+Traceback (most recent call last):
+  File "./manage.py", line 22, in <module>
+    execute_from_command_line(sys.argv)
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/django/core/management/__init__.py",
+line 367, in execute_from_command_line
+    utility.execute()
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/django/core/management/__init__.py",
+line 341, in execute
+    django.setup()
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/django/__init__.py", line
+27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/django/apps/registry.py",
+line 108, in populate
+    app_config.import_models(all_models)
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/django/apps/config.py",
+line 199, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in
+import_module
+    __import__(name)
+  File "/Pj/p2/books/models.py", line 20, in <module>
+    from uuidfield import UUIDField
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/uuidfield/__init__.py",
+line 8, in <module>
+    from .fields import UUIDField
+  File
+"/Pj/venv/local/lib/python2.7/site-packages/uuidfield/fields.py", line
+4, in <module>
+    from django.db.models import Field, SubfieldBase
+ImportError: cannot import name SubfieldBase
+
+SubfieldBase¶
+
+django.db.models.fields.subclassing.SubfieldBase has been deprecated
+and will be removed in Django 1.10. Historically, it was used to
+handle fields where type conversion was needed when loading from the
+database, but it was not used in .values() calls or in aggregates. It
+has been replaced with from_db_value().
+
+The new approach doesn’t call the to_python() method on assignment as
+was the case with SubfieldBase. If you need that behavior, reimplement
+the Creator class from Django’s source code in your project.
+
+

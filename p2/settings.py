@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     # brought in from pathagar:
+    'books',
     # in pathagar but not yet brought in:
 #   'django.contrib.sites',
 #   'django.contrib.comments',
 #   'tagging', # TODO old
 #   'taggit',
-#   'pathagar.books'
     # here by default but not in pathagar:
     'django.contrib.messages',
 ]
