@@ -48,4 +48,5 @@ The following 'sanity check' is recommended when beginning work::
     1.10.5
 
 
-That's as far as I've gotten so far.
+See the file ``steps_taken`` for what's been done next and the file
+``to_solve`` for a trace-back of the result.
